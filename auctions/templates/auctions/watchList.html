@@ -1,0 +1,29 @@
+{% extends "auctions/layout.html" %}
+ 
+{% block body %}
+    <h2>WatchList</h2>
+    <div class="row p-5" style="margin-right:0px">
+        {% for item in watchlist_items%}
+            <div class="col-sm-3 mt-3">
+                <a href="{% url 'auction' item.auction.id %}">
+                    <div class="card card-activeListings text-center">
+                        {% if item.auction.image_url is None or item.auction.image_url == "" %}
+                        <img class="card-img-top" src="../../static/auctions/unknown.png" alt="image">
+            
+                        {% else %}
+                        <img class="card-img-top" src="{{item.auction.image_url}}" alt="image">
+            
+                        {% endif %}
+                        <div class="card-body">
+                        <h5 class="card-title">{{item.auction.title}}</h5>
+                        <p class="card-text">{{item.auction.description|truncatewords:15 }}</p>
+                        <span class="displayPrice">${{item.auction.starting_bid}}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
