@@ -1,7 +1,7 @@
 # Commerce
 
-Run <code>python manage.py makemigrations auctions</code> to make migrations for the auctions app.
+Run `python manage.py makemigrations auctions` to make migrations for the auctions app.
 
-Run <code>python manage.py migrate</code> to apply migrations to your database.
+Run `python manage.py migrate` to apply migrations to your database.
 
-Run <code>python manage.py runserver</code>
+Run `python manage.py runserver`
